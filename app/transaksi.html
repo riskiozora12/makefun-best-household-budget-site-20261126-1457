@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Transaksi — Rumah Tangga</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231f5c43'/%3E%3Ctext x='16' y='23' font-size='18' text-anchor='middle' fill='%23e8c87a' font-family='sans-serif' font-weight='bold'%3ER%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+<script type="module" src="app.js"></script>
+</head>
+<body data-page="transaksi">
+<header class="kepala">
+  <div class="kepala-dalam">
+    <p class="logo">Rumah<span>Tangga</span></p>
+    <p class="tagline">Anggaran keluarga Santoso — ayah, ibu, Dimas &amp; Kirana</p>
+  </div>
+  <nav class="nav" aria-label="Navigasi utama">
+    <a href="index.html" data-halaman="dasbor">Dasbor</a>
+    <a href="anggaran.html" data-halaman="anggaran">Anggaran</a>
+    <a href="transaksi.html" data-halaman="transaksi">Transaksi</a>
+    <a href="tagihan.html" data-halaman="tagihan">Tagihan</a>
+    <a href="tabungan.html" data-halaman="tabungan">Tabungan</a>
+    <a href="laporan.html" data-halaman="laporan">Laporan</a>
+  </nav>
+</header>
+
+<main class="bungkus">
+  <h1 class="judul-halaman">Transaksi</h1>
+  <p class="subjudul">Semua pemasukan dan pengeluaran yang tercatat. Saring berdasarkan kategori
+    atau bulan, atau tambahkan transaksi baru di bawah — langsung tersimpan dan
+    ikut mengubah dasbor, anggaran, dan laporan.</p>
+
+  <section class="kartu" aria-label="Daftar transaksi">
+    <h2>Semua transaksi</h2>
+    <div class="filter">
+      <label><span>Kategori</span>
+        <select id="filter-kategori"></select>
+      </label>
+      <label><span>Bulan</span>
+        <select id="filter-bulan"></select>
+      </label>
+      <button type="button" class="tombol sekunder" id="tombol-reset-filter">Reset filter</button>
+    </div>
+    <p class="keterangan" id="jumlah-filter"></p>
+    <div class="tabel-bungkus">
+      <table>
+        <thead>
+          <tr><th>Tanggal</th><th>Keterangan</th><th>Kategori</th><th class="angka">Jumlah</th></tr>
+        </thead>
+        <tbody id="tabel-transaksi"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="kartu" aria-label="Tambah transaksi">
+    <h2>Tambah transaksi baru</h2>
+    <p class="keterangan">Catat uang masuk atau keluar begitu terjadi, supaya anggarannya selalu akurat.</p>
+    <form id="form-transaksi">
+      <div class="baris-form">
+        <label><span>Tanggal</span>
+          <input type="date" id="tambah-tanggal" value="2026-11-26" required>
+        </label>
+        <label><span>Kategori</span>
+          <select id="tambah-kategori" required></select>
+        </label>
+      </div>
+      <label><span>Keterangan</span>
+        <input type="text" id="tambah-keterangan" maxlength="80" placeholder="mis. Belanja sayur di pasar" required>
+      </label>
+      <label><span>Jumlah (Rp)</span>
+        <input type="number" id="tambah-jumlah" min="1000" step="1000" placeholder="mis. 150000" required>
+      </label>
+      <button type="submit" class="tombol">Tambah transaksi</button>
+      <p class="pesan" id="pesan-transaksi" role="status"></p>
+    </form>
+  </section>
+</main>
+
+<footer class="kaki">
+  <p>Rumah Tangga — situs anggaran keluarga, dibuat untuk keluarga Santoso, November 2026.</p>
+  <p>Data tersimpan di peramban Anda sendiri (localStorage) dan tidak dikirim ke mana pun.</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Laporan — Rumah Tangga</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231f5c43'/%3E%3Ctext x='16' y='23' font-size='18' text-anchor='middle' fill='%23e8c87a' font-family='sans-serif' font-weight='bold'%3ER%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+<script type="module" src="app.js"></script>
+</head>
+<body data-page="laporan">
+<header class="kepala">
+  <div class="kepala-dalam">
+    <p class="logo">Rumah<span>Tangga</span></p>
+    <p class="tagline">Anggaran keluarga Santoso — ayah, ibu, Dimas &amp; Kirana</p>
+  </div>
+  <nav class="nav" aria-label="Navigasi utama">
+    <a href="index.html" data-halaman="dasbor">Dasbor</a>
+    <a href="anggaran.html" data-halaman="anggaran">Anggaran</a>
+    <a href="transaksi.html" data-halaman="transaksi">Transaksi</a>
+    <a href="tagihan.html" data-halaman="tagihan">Tagihan</a>
+    <a href="tabungan.html" data-halaman="tabungan">Tabungan</a>
+    <a href="laporan.html" data-halaman="laporan">Laporan</a>
+  </nav>
+</header>
+
+<main class="bungkus">
+  <h1 class="judul-halaman">Laporan Bulanan</h1>
+  <p class="subjudul">Perbandingan pemasukan, pengeluaran, dan sisa tiap bulan —
+    supaya keluarga bisa melihat pola, bukan hanya angka bulan ini.</p>
+
+  <section class="kartu" aria-label="Perbandingan bulanan">
+    <h2>Juni – November 2026</h2>
+    <p class="keterangan" id="rata-pengeluaran"></p>
+    <div class="tabel-bungkus">
+      <table>
+        <thead>
+          <tr><th>Bulan</th><th class="angka">Pemasukan</th><th class="angka">Pengeluaran</th><th class="angka">Sisa</th><th class="angka">Tingkat hemat</th></tr>
+        </thead>
+        <tbody id="tabel-bulanan"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <div class="grid-dua bariskartu">
+    <section class="kartu" aria-label="Pengeluaran terbesar">
+      <h2>Pengeluaran terbesar bulan ini</h2>
+      <p class="keterangan">Lima kategori dengan pengeluaran tertinggi di November 2026.</p>
+      <ol class="papan-peringkat" id="pengeluaran-terbesar"></ol>
+    </section>
+
+    <section class="kartu" aria-label="Tips hemat">
+      <h2>Tips hemat untuk keluarga ini</h2>
+      <p class="keterangan">Dihitung dari angka keluarga Santoso sendiri, bukan tips umum.</p>
+      <ol class="tips" id="daftar-tips"></ol>
+    </section>
+  </div>
+</main>
+
+<footer class="kaki">
+  <p>Rumah Tangga — situs anggaran keluarga, dibuat untuk keluarga Santoso, November 2026.</p>
+  <p>Data tersimpan di peramban Anda sendiri (localStorage) dan tidak dikirim ke mana pun.</p>
+</footer>
+</body>
+</html>

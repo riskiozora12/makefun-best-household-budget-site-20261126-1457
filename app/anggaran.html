@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anggaran — Rumah Tangga</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231f5c43'/%3E%3Ctext x='16' y='23' font-size='18' text-anchor='middle' fill='%23e8c87a' font-family='sans-serif' font-weight='bold'%3ER%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+<script type="module" src="app.js"></script>
+</head>
+<body data-page="anggaran">
+<header class="kepala">
+  <div class="kepala-dalam">
+    <p class="logo">Rumah<span>Tangga</span></p>
+    <p class="tagline">Anggaran keluarga Santoso — ayah, ibu, Dimas &amp; Kirana</p>
+  </div>
+  <nav class="nav" aria-label="Navigasi utama">
+    <a href="index.html" data-halaman="dasbor">Dasbor</a>
+    <a href="anggaran.html" data-halaman="anggaran">Anggaran</a>
+    <a href="transaksi.html" data-halaman="transaksi">Transaksi</a>
+    <a href="tagihan.html" data-halaman="tagihan">Tagihan</a>
+    <a href="tabungan.html" data-halaman="tabungan">Tabungan</a>
+    <a href="laporan.html" data-halaman="laporan">Laporan</a>
+  </nav>
+</header>
+
+<main class="bungkus">
+  <h1 class="judul-halaman">Anggaran November 2026</h1>
+  <p class="subjudul">Batas belanja tiap kategori dan seberapa jauh sudah terpakai.
+    Batang kuning berarti sudah di atas 85%, batang merah berarti anggaran sudah lewat.</p>
+
+  <section class="ringkasan" aria-label="Ringkasan anggaran">
+    <div class="kartu">
+      <p class="label">Total anggaran</p>
+      <p class="angka" id="total-anggaran">Rp0</p>
+      <p class="catatan">Untuk 8 kategori</p>
+    </div>
+    <div class="kartu">
+      <p class="label">Sudah terpakai</p>
+      <p class="angka keluar" id="total-pakai">Rp0</p>
+      <p class="catatan">Dari semua transaksi bulan ini</p>
+    </div>
+    <div class="kartu">
+      <p class="label">Sisa anggaran</p>
+      <p class="angka sisa" id="total-sisa-anggaran">Rp0</p>
+      <p class="catatan">Untuk 4 hari terakhir November</p>
+    </div>
+  </section>
+
+  <section class="kartu" aria-label="Anggaran per kategori">
+    <h2>Per kategori</h2>
+    <p class="keterangan">Angka pemakaian dihitung dari transaksi yang tercatat di halaman Transaksi.</p>
+    <div id="daftar-anggaran"></div>
+  </section>
+
+  <section class="kartu" aria-label="Ubah anggaran">
+    <h2>Ubah batas anggaran</h2>
+    <p class="keterangan">Anggaran bulan ini perlu disesuaikan? Pilih kategori dan masukkan batas barunya.
+      Perubahan tersimpan di peramban Anda.</p>
+    <form id="form-anggaran">
+      <div class="baris-form">
+        <label><span>Kategori</span>
+          <select id="ubah-kategori" required></select>
+        </label>
+        <label><span>Batas baru (Rp)</span>
+          <input type="number" id="ubah-batas" min="1000" step="1000" placeholder="mis. 3000000" required>
+        </label>
+      </div>
+      <button type="submit" class="tombol">Simpan anggaran baru</button>
+      <p class="pesan" id="pesan-anggaran" role="status"></p>
+    </form>
+  </section>
+</main>
+
+<footer class="kaki">
+  <p>Rumah Tangga — situs anggaran keluarga, dibuat untuk keluarga Santoso, November 2026.</p>
+  <p>Data tersimpan di peramban Anda sendiri (localStorage) dan tidak dikirim ke mana pun.</p>
+</footer>
+</body>
+</html>

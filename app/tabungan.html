@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tabungan — Rumah Tangga</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231f5c43'/%3E%3Ctext x='16' y='23' font-size='18' text-anchor='middle' fill='%23e8c87a' font-family='sans-serif' font-weight='bold'%3ER%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+<script type="module" src="app.js"></script>
+</head>
+<body data-page="tabungan">
+<header class="kepala">
+  <div class="kepala-dalam">
+    <p class="logo">Rumah<span>Tangga</span></p>
+    <p class="tagline">Anggaran keluarga Santoso — ayah, ibu, Dimas &amp; Kirana</p>
+  </div>
+  <nav class="nav" aria-label="Navigasi utama">
+    <a href="index.html" data-halaman="dasbor">Dasbor</a>
+    <a href="anggaran.html" data-halaman="anggaran">Anggaran</a>
+    <a href="transaksi.html" data-halaman="transaksi">Transaksi</a>
+    <a href="tagihan.html" data-halaman="tagihan">Tagihan</a>
+    <a href="tabungan.html" data-halaman="tabungan">Tabungan</a>
+    <a href="laporan.html" data-halaman="laporan">Laporan</a>
+  </nav>
+</header>
+
+<main class="bungkus">
+  <h1 class="judul-halaman">Tabungan</h1>
+  <p class="subjudul">Tujuan menabung keluarga dan seberapa jauh sudah tercapai.
+    Setiap rupiah yang ditambahkan langsung memperbarui batang progres dan tersimpan.</p>
+
+  <section class="kartu" aria-label="Tujuan tabungan">
+    <h2>Empat tujuan keluarga</h2>
+    <p class="keterangan" id="ringkas-tabungan-total"></p>
+    <div id="daftar-tabungan"></div>
+  </section>
+
+  <section class="kartu" aria-label="Tambah tabungan">
+    <h2>Tambah tabungan</h2>
+    <p class="keterangan">Masukkan uang ke salah satu tujuan — misalnya sisa belanja minggu ini
+      atau bonus dari usaha kue.</p>
+    <form id="form-tabungan">
+      <div class="baris-form">
+        <label><span>Tujuan</span>
+          <select id="nabung-tujuan" required></select>
+        </label>
+        <label><span>Jumlah (Rp)</span>
+          <input type="number" id="nabung-jumlah" min="1000" step="1000" placeholder="mis. 250000" required>
+        </label>
+      </div>
+      <button type="submit" class="tombol">Tambah ke tabungan</button>
+      <p class="pesan" id="pesan-tabungan" role="status"></p>
+    </form>
+  </section>
+
+  <section class="kartu" aria-label="Aturan menabung keluarga">
+    <h2>Aturan menabung keluarga Santoso</h2>
+    <ul class="tips">
+      <li>Dana Darurat diisi dulu sampai Rp20.000.000 — targetnya enam kali pengeluaran bulanan.</li>
+      <li>Setiap tanggal 5, begitu gajian masuk, Rp500.000 langsung dipindah ke Pendidikan Anak.</li>
+      <li>Keuntungan usaha kue dibagi dua: separuh untuk Liburan Keluarga, separuh untuk Renovasi Dapur.</li>
+      <li>Tabungan tidak boleh diambil untuk belanja harian; kalau terpaksa, dicatat sebagai pinjaman keluarga dan dikembalikan bulan berikutnya.</li>
+    </ul>
+  </section>
+</main>
+
+<footer class="kaki">
+  <p>Rumah Tangga — situs anggaran keluarga, dibuat untuk keluarga Santoso, November 2026.</p>
+  <p>Data tersimpan di peramban Anda sendiri (localStorage) dan tidak dikirim ke mana pun.</p>
+</footer>
+</body>
+</html>
